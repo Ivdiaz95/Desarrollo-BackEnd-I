@@ -1,1 +1,46 @@
-[]
+[
+  {
+    "id": 3,
+    "title": "Televisor Smart LG",
+    "description": "Smart TV 4K de 55 pulgadas con control de voz.",
+    "code": "LGSMART55",
+    "price": 800,
+    "status": true,
+    "stock": 10,
+    "category": "Electrónica",
+    "thumbnails": []
+  },
+  {
+    "id": 4,
+    "title": "Auriculares Sony",
+    "description": "Auriculares con cancelación de ruido y sonido de alta fidelidad.",
+    "code": "SNWH1000",
+    "price": 350,
+    "status": true,
+    "stock": 100,
+    "category": "Accesorios",
+    "thumbnails": []
+  },
+  {
+    "id": 5,
+    "title": "Consola de Videojuegos",
+    "description": "La consola más popular del momento, con gráficos de última generación.",
+    "code": "PS5PRO",
+    "price": 600,
+    "status": true,
+    "stock": 5,
+    "category": "Gaming",
+    "thumbnails": []
+  },
+  {
+    "id": 6,
+    "title": "Teclado Mecanico",
+    "description": "teclado mecanico 100%",
+    "code": "4587",
+    "price": 1500,
+    "stock": 6,
+    "category": "accesorio",
+    "thumbnails": [],
+    "status": false
+  }
+]

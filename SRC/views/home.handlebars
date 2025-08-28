@@ -1,0 +1,27 @@
+<!--Descripción: Vista estática para mostrar productos.-->
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Productos</title>
+    <style>
+      body { font-family: sans-serif; margin: 2rem; } h1 { color: #333; } ul {
+      list-style-type: none; padding: 0; } li { background: #f4f4f4; margin:
+      0.5rem 0; padding: 1rem; border-radius: 8px; } li strong { color: #555; }
+    </style>
+  </head>
+  <body>
+    <h1>Productos Disponibles</h1>
+    <ul>
+      {{#each products}}
+        <li>
+          <strong>{{this.title}}</strong>
+          - ${{this.price}}
+          <p>Descripción: {{this.description}}</p>
+          <p>Stock: {{this.stock}}</p>
+        </li>
+      {{/each}}
+    </ul>
+  </body>
+</html>

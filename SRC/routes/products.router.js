@@ -3,7 +3,7 @@ const router = express.Router();
 const ProductManager = require("../managers/ProductManager");
 
 // Instancia del manejador de productos
-const productManager = new ProductManager("./src/data/products.json");
+const productManager = new ProductManager("products.json");
 
 // GET /api/products/ - Obtener todos los productos
 router.get("/", async (req, res) => {

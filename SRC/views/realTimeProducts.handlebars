@@ -1,0 +1,74 @@
+<!--
+Vista para productos en tiempo real con Websockets. -->
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos en Tiempo Real</title>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="/js/realTimeProducts.js"></script>
+
+    <style>
+      body { font-family: sans-serif; margin: 2rem; background-color: #f0f2f5; }
+      .container { max-width: 900px; margin: auto; padding: 1rem; background:
+      white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); } h1 {
+      text-align: center; color: #333; } .form-container { background: #e9ecef;
+      padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; }
+      .form-container h2 { margin-top: 0; color: #555; } form { display: grid;
+      grid-template-columns: 1fr 1fr; gap: 1rem; } form input, form button {
+      padding: 0.75rem; border: 1px solid #ccc; border-radius: 5px; } form
+      button { background-color: #007bff; color: white; border: none; cursor:
+      pointer; grid-column: 1 / span 2; } form button:hover { background-color:
+      #0056b3; } .product-list { margin-top: 2rem; } .product-list h2 { color:
+      #555; } .product-card { display: flex; align-items: center;
+      justify-content: space-between; background: #fff; border: 1px solid #ddd;
+      border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; box-shadow: 0
+      2px 4px rgba(0,0,0,0.05); } .product-info { flex-grow: 1; } .product-info
+      strong { display: block; font-size: 1.1rem; color: #333; } .product-info p
+      { margin: 0.25rem 0; font-size: 0.9rem; color: #666; } .product-card
+      button { background-color: #dc3545; color: white; border: none; padding:
+      0.5rem 1rem; border-radius: 5px; cursor: pointer; } .product-card
+      button:hover { background-color: #c82333; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Productos en Tiempo Real</h1>
+      <div class="form-container">
+        <h2>Crear un nuevo producto</h2>
+        <form id="product-form">
+          <input type="text" name="title" placeholder="Título" required />
+          <input
+            type="text"
+            name="description"
+            placeholder="Descripción"
+            required
+          />
+          <input type="text" name="code" placeholder="Código" required />
+          <input type="number" name="price" placeholder="Precio" required />
+          <input type="number" name="stock" placeholder="Stock" required />
+          <input type="text" name="category" placeholder="Categoría" required />
+          <div
+            style="grid-column: 1 / span 2; display: flex; align-items: center; gap: 8px;"
+          >
+            <label for="product-status">Estado:</label>
+            <select name="status" id="product-status">
+              <option value="true">Disponible</option>
+              <option value="false">No Disponible</option>
+            </select>
+          </div>
+          <button type="submit">Agregar Producto</button>
+        </form>
+      </div>
+
+      <div class="product-list">
+        <h2>Lista de Productos</h2>
+        <ul id="products-list">
+          {{! Los productos se renderizarán aquí con JavaScript }}
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

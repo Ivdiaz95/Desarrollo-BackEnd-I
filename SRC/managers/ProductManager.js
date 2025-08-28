@@ -3,7 +3,7 @@ const path = require("path");
 
 class ProductManager {
   constructor(filePath) {
-    this.filePath = path.resolve(filePath);
+    this.filePath = path.resolve(__dirname, "..", "data", filePath);
   }
 
   // Leer todos los productos
