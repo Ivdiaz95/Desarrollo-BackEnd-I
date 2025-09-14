@@ -1,21 +1,22 @@
-const { Router } = require("express");
-const ProductManager = require("../managers/ProductManager");
+import { Router } from "express";
+import ProductManager from "../managers/productmanager.js";
 
 const viewsRouter = Router();
 const productManager = new ProductManager("../../products.json");
 
-// Ruta para la vista "home.handlebars"
+// Esta ruta será ahora la página principal (localhost:8080)
 viewsRouter.get("/", async (req, res) => {
   try {
     const products = await productManager.getProducts();
-    // Aquí es donde está el cambio: se renderiza 'realTimeProducts'
     res.render("realTimeProducts", { products });
   } catch (error) {
-    res.status(500).send("Error al obtener los productos para la vista.");
+    res
+      .status(500)
+      .send("Error al obtener los productos para la vista en tiempo real.");
   }
 });
 
-// Ruta para la vista "realTimeProducts.handlebars"
+// Puedes mantener la ruta si el usuario la escribe explícitamente, aunque ahora es redundante.
 viewsRouter.get("/realtimeproducts", async (req, res) => {
   try {
     const products = await productManager.getProducts();
@@ -27,4 +28,4 @@ viewsRouter.get("/realtimeproducts", async (req, res) => {
   }
 });
 
-module.exports = viewsRouter;
+export { viewsRouter };

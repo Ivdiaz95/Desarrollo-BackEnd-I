@@ -42,5 +42,16 @@
     "category": "accesorio",
     "thumbnails": [],
     "status": false
+  },
+  {
+    "id": 7,
+    "title": "Parlante Bluetooth",
+    "description": "Parlante doble con blutu",
+    "code": "4587123",
+    "price": 859,
+    "stock": 40,
+    "category": "periferico",
+    "thumbnails": [],
+    "status": false
   }
 ]

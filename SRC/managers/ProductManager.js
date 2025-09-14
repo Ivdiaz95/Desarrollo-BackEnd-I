@@ -1,8 +1,16 @@
-const fs = require("fs").promises;
-const path = require("path");
+import { promises as fs } from "fs";
+import path from "path";
+// Importamos 'fileURLToPath' para convertir la URL del módulo a una ruta de archivo.
+import { fileURLToPath } from "url";
+
+// En ES Modules, 'import.meta.url' contiene la URL del archivo actual.
+// Usamos 'fileURLToPath' y 'path.dirname' para obtener el equivalente a '__dirname'.
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 class ProductManager {
   constructor(filePath) {
+    // Usamos el '__dirname' recién creado para resolver la ruta del archivo.
     this.filePath = path.resolve(__dirname, "..", "data", filePath);
   }
 
@@ -98,4 +106,4 @@ class ProductManager {
   }
 }
 
-module.exports = ProductManager;
+export default ProductManager;

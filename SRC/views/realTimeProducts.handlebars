@@ -1,14 +1,9 @@
-<!--
-Vista para productos en tiempo real con Websockets. -->
-
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Productos en Tiempo Real</title>
     <script src="/socket.io/socket.io.js"></script>
-
-    <script src="/js/realTimeProducts.js"></script>
 
     <style>
       body { font-family: sans-serif; margin: 2rem; background-color: #f0f2f5; }
@@ -66,9 +61,11 @@ Vista para productos en tiempo real con Websockets. -->
       <div class="product-list">
         <h2>Lista de Productos</h2>
         <ul id="products-list">
-          {{! Los productos se renderizarán aquí con JavaScript }}
         </ul>
       </div>
     </div>
+
+    <!-- Mueve la etiqueta script aquí, al final del body -->
+    <script src="/js/realTimeProducts.js"></script>
   </body>
 </html>
